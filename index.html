@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./imgs/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <title>BookMark</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <main class="py-5">
+        <div class="container d-flex justify-content-center align-items-center">
+            <div class="title">
+                <h1 class="py-2">Bookmarker</h1>
+            </div>
+            </div>
+            <div class="bookmark-body container w-100 p-3 py-2 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+                <h2 class="pt-3"><i class="fa-solid fa-bookmark"></i>
+                    Bookmark your favorite sites
+                    <i class="fa-solid fa-bookmark"></i>
+                </h2>
+                <div class="first-input w-100">
+                    <label for="siteName" class="py-1 fw-bold">
+                        <span class="pe-1"><i class="fa-solid fa-book-bookmark"></i></span>
+                        Site Name
+                    </label>
+                    <input
+                    oninput="nameValidation()"
+                    class="form-control"
+                    type="text"
+                    id="siteName"
+                    placeholder="Bookmark Name"
+                    >
+                    <p id="alertmsg" class="alert alert-danger p-1 d-none">Site name must contain at least 3 characters</p>
+                </div>
+
+                <div class="second-input w-100">
+                    <label for="siteUrl" class="fw-bold">
+                        <span class="pe-1"><i class="fa-solid fa-link"></i></span>
+                        Site URL
+                    </label>
+                    <input
+                    oninput="urlValidation()"
+                    class="form-control"
+                    type="text"
+                    id="siteUrl"
+                    placeholder="Website URL"
+                    >
+                    <p id="alertm" class="alert alert-danger p-1 d-none">Site URL must be a valid one</p>
+                </div>
+                <div class="my-button d-flex justify-content-center align-items-center">
+                    <button onclick="addWebsite()" class="btn-sm mb-4 py-2 px-5 rounded-2">Submit</button>
+                </div>        
+        </div>
+        <table class="table text-center mt-3 container">
+        <thead>
+            <th>Index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody id="tableData"></tbody>
+        </table>
+            </div>
+    </main>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
